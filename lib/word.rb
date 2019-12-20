@@ -30,4 +30,11 @@ class Word
     self.word_name() == stage_to_compare.word_name()
   end
 
+  def self.find(id)
+    @@words[id]
+  end
+
+  def add_definition(definition)
+    @definitions.push(definition)
+  end
 end
