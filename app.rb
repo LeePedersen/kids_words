@@ -40,6 +40,18 @@ post('/word/:id/definition') do
   erb(:word)
 end
 
+get('/words/:id/edit') do
+  @word = Word.find(params[:id].to_i())
+  erb(:edit_word)
+end
+
+patch('/words/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.update(params[:edited])
+  @words = Word.all
+  erb(:words)
+end
+
 # patch('/words/:id/artists/:artist_id') do
 #   @word = Stage.find(params[:id].to_i())
 #   artist = @word.artists[(params[:artist_id].to_i)]
