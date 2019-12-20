@@ -10,6 +10,20 @@ describe('#word') do
     @word1.add_definition(@definition1)
   end
 
+  describe('#==') do
+    it("is the same word if it's spelled the same") do
+      word2 = Word.new("arbitrary", nil)
+      expect(@word1).to(eq(word2))
+    end
+  end
+
+  describe(".clear") do
+  it("clears all words") do
+    Word.clear
+    expect(Word.all).to(eq([]))
+  end
+end
+
   describe('#save') do
     it('saves a word') do
       expect(Word.all).to(eq([@word1]))
@@ -27,6 +41,4 @@ describe('#word') do
       expect(@word1.definitions).to(eq([@definition1]))
     end
   end
-
-
 end
