@@ -9,7 +9,9 @@ describe('#word') do
     @word1.save()
     @word2.save()
     @definition1 = Definition.new("having value", 1)
+    @definition2 = Definition.new("random", 1)
     @word1.add_definition(@definition1)
+    @word1.add_definition(@definition2)
   end
 
   describe('#==') do
@@ -40,7 +42,7 @@ end
 
   describe('.add_definition') do
     it('saves an array of definitions to a word') do
-      expect(@word1.definitions).to(eq([@definition1]))
+      expect(@word1.definitions).to(eq([@definition1, @definition2]))
     end
   end
 
@@ -51,11 +53,17 @@ end
     end
   end
 
-  describe('.delete') do
+  describe('.delete_word') do
     it('deletes a word') do
-
-      @word1.delete
+      @word1.delete_word
       expect(Word.all).to(eq([@word2]))
+    end
+  end
+
+  describe('.delete_def') do
+    it('deletes a definition') do
+      @word1.delete_def(0)
+      expect(@word1.definitions).to(eq([@definition2]))
     end
   end
 end
