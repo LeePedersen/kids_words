@@ -1,4 +1,4 @@
-<h1>Word: <%= @word.word_name %></h1>
+<h3>Word: <%= @word.word_name %></h3>
 
 <% if @word.definitions.any? %>
   <ul>
@@ -13,4 +13,3 @@
 <a href="/words/<%= @word.id %>/add_definition">Add a new definition</a>
 
 <p><a href="/words/<%= @word.id %>/edit">Edit word</a></p>
-<a href="/">Return to word list</a>
