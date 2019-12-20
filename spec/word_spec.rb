@@ -1,4 +1,3 @@
-# require 'rspec'
 require 'word'
 require 'definition'
 
@@ -14,4 +13,9 @@ describe('#word') do
       expect(Word.all).to(eq([@word1]))
     end
   end
+
+  # describe('.add_definition') do
+  #   it('saves an array of definitions to a word')
+
+
 end
