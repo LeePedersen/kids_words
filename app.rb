@@ -52,8 +52,36 @@ patch('/words/:id') do
   erb(:words)
 end
 
-# patch('/words/:id/artists/:artist_id') do
-#   @word = Stage.find(params[:id].to_i())
-#   artist = @word.artists[(params[:artist_id].to_i)]
-#   artist.delete
-# end
+delete('/words/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.delete_word
+  @words = Word.all
+  erb(:words)
+end
+
+get('/words/:id/definition/:def_id') do
+  @word = Word.find(params[:id].to_i)
+  @definition = @word.definitions[params[:def_id].to_i]
+  erb(:definition)
+end
+
+get('/words/:id/definition/:def_id/edit') do
+  @word = Word.find(params[:id].to_i)
+  @definition = @word.definitions[params[:def_id].to_i]
+  erb(:edit_definition)
+end
+
+patch('/words/:id/definition/:def_id') do
+  @word = Word.find(params[:id].to_i())
+  @definition = @word.definitions[params[:def_id].to_i]
+  @definition.edit(params[:edited])
+  @words = Word.all
+  erb(:word)
+end
+
+delete('/words/:id/definition/:def_id') do
+  @word = Word.find(params[:id].to_i())
+  @word.delete_def(params[:id].to_i())
+  @words = Word.all
+  erb(:word)
+end

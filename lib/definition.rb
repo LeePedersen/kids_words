@@ -4,4 +4,8 @@ class Definition
     @definition = definition
     @word_id = word_id
   end
+
+  def edit(edited)
+    @definition = edited
+  end
 end

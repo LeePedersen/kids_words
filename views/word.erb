@@ -3,7 +3,7 @@
 <% if @word.definitions.any? %>
   <ul>
     <% @word.definitions.each do |definition| %>
-      <li><a href="/definition/<%= @word.definitions.index(definition) %>"><%= definition.definition %></a></li>
+      <li><a href="/words/<%= @word.id %>/definition/<%= @word.definitions.index(definition) %>"><%= definition.definition %></a></li>
     <% end %>
   </ul>
 <% else %>

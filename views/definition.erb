@@ -1,0 +1,5 @@
+<h1>Word: <%= @word.word_name %></h1>
+
+<p>Definition: <%= @word.definitions[params[:def_id].to_i].definition %></p>
+
+<p><a href="/words/<%= @word.id %>/definition/<%= params[:def_id] %>/edit">Edit definition</a></p>

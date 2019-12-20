@@ -42,7 +42,11 @@ class Word
     @word_name = name
   end
 
-  def delete
+  def delete_word
     @@words.delete(self.id)
+  end
+
+  def delete_def(index)
+    @definitions.delete_at(index)
   end
 end

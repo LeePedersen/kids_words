@@ -1,0 +1,17 @@
+<h3>Edit definition for <%= @word.word_name %>:</h3>
+<p><%= @word.definitions[params[:def_id].to_i].definition %></p>
+
+<form action="/words/<%= @word.id %>/definition/<%= params[:def_id].to_i %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+
+  <label for="edited">Enter your edited definition:</label>
+  <input name="edited" class="form-control" type="text">
+
+  <button type="submit">Update</button>
+</form>
+
+<form action="/words/<%= @word.id %>/definition/<%= params[:def_id].to_i %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submit">Delete definition</button>
+</form>
