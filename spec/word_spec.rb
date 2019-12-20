@@ -5,15 +5,17 @@ describe('#word') do
   before(:each) do
     Word.clear()
     @word1 = Word.new("arbitrary", nil)
+    @word2 = Word.new("antithesis", nil)
     @word1.save()
+    @word2.save()
     @definition1 = Definition.new("having value", 1)
     @word1.add_definition(@definition1)
   end
 
   describe('#==') do
     it("is the same word if it's spelled the same") do
-      word2 = Word.new("arbitrary", nil)
-      expect(@word1).to(eq(word2))
+      word3 = Word.new("arbitrary", nil)
+      expect(@word1).to(eq(word3))
     end
   end
 
@@ -26,7 +28,7 @@ end
 
   describe('#save') do
     it('saves a word') do
-      expect(Word.all).to(eq([@word1]))
+      expect(Word.all).to(eq([@word1, @word2]))
     end
   end
 
@@ -39,6 +41,21 @@ end
   describe('.add_definition') do
     it('saves an array of definitions to a word') do
       expect(@word1.definitions).to(eq([@definition1]))
+    end
+  end
+
+  describe('.edit') do
+    it('edits a word') do
+      @word1.edit("agnostic")
+      expect(@word1.word_name).to(eq("agnostic"))
+    end
+  end
+
+  describe('.delete') do
+    it('deletes a word') do
+
+      @word1.delete
+      expect(Word.all).to(eq([@word2]))
     end
   end
 end

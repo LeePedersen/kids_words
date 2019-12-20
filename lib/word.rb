@@ -37,4 +37,12 @@ class Word
   def add_definition(definition)
     @definitions.push(definition)
   end
+
+  def edit(name)
+    @word_name = name
+  end
+
+  def delete
+    @@words.delete(self.id)
+  end
 end

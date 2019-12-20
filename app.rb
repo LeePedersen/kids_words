@@ -47,7 +47,7 @@ end
 
 patch('/words/:id') do
   @word = Word.find(params[:id].to_i())
-  @word.update(params[:edited])
+  @word.edit(params[:edited])
   @words = Word.all
   erb(:words)
 end
