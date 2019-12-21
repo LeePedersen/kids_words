@@ -9,6 +9,9 @@ _This website allows kids to enter words and definitions, and see and change tho
 ## Known Bugs
 _None_
 
+## Heroku Link
+_https://radiant-chamber-46489.herokuapp.com/_
+
 ## Setup
 * _Make sure you have sinatra and ruby installed_
 * _Clone to machine_
