@@ -2,27 +2,37 @@
 
 <html lang="en" dir="ltr">
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
     <style>
       body {
-        font-family: serif;
+        background-color:  #b2e4ce;
         font-size: 20px;
+        font-family: 'Quicksand', sans-serif;
       }
       h1 {
         font-variant: small-caps;
         font-size: 50px;
+        font-weight: bold;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
       }
+      img {
+        width: 500px;
+      }
+      .top {
+        color: lightgray;
+        background-image: url("https://shop-resources.prod.cms.tractorsupply.com/resource/image/15212/landscape_ratio2x1/1400/700/fd5a72679010d185665204c1b8933a9a/zk/prepare-your-chickens-for-winter-main-image.jpg")
+      }
+
     </style>
     <meta charset="utf-8">
     <title>Words</title>
   </head>
   <body>
-    <div class="top">
-
-    </div>
     <div class="container">
       <a href="/">HOME</a>
-      <div class="jumbotron">
+      <div class="jumbotron top">
         <h1>Defining Words</h1>
       </div>
       <%= yield %>
